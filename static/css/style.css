@@ -1,0 +1,28 @@
+.container {
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+form{
+  display: inline-block;
+  margin: 0 auto;
+}
+
+tr,td,th{padding: 5px; }
+table{
+  display: flex;
+  justify-content: center;
+  text-align: left;
+}
+
+body{
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-color: rgba(90, 90, 190, .2)
+}
+input{padding: 5px;}
+label{margin: 5px;}
+option{padding: 5px;}
+*{font-family: helvetica;}
