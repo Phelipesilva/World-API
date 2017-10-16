@@ -6,17 +6,24 @@
 	<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 	<title>World API</title>
 </head>
-<!--{{url_for('static', filename='img/bg_map.png')}}  -->
 <body>
+	<nav>
+		<ul>
+			<li><a href="{{url_for('home')}}">Buscar Cidades</a></li>
+			<li><a href="{{url_for('addcidade')}}">Adicionar Cidade</a></li>
+			<li><a href="{{url_for('rmcidade')}}">Remover Cidade</a></li>
+			<li><a href="{{url_for('attcidade')}}">Atualizar Cidade</a></li>
+		</ul>
+	</nav>
 	<div class="container" >
-			<form method="POST" action="/cidades/">
+			<form method="GET" action="/cidades/">
 				<label>País: </label>
 				<select name="pais">
 					{% for p in paises %}
-						<option value="{{p}}">{{p}}</option>
+						<option value="{{p['Code']}}">{{p['Name']}}</option>
 					{% endfor %}
 				</select>
-				<input type="submit" value="Buscar">
+				<input type="submit" value="Buscar" class="btn-primary">
 			</form>
 	</div>
 </body>

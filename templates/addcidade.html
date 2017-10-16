@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+	<title>Adcionar Cidade - World API</title>
+</head>
+<body>
+	<nav>
+		<ul>
+			<li><a href="{{url_for('home')}}">Buscar Cidades</a></li>
+			<li><a href="{{url_for('addcidade')}}">Adicionar Cidade</a></li>
+			<li><a href="{{url_for('rmcidade')}}">Remover Cidade</a></li>
+			<li><a href="{{url_for('attcidade')}}">Atualizar Cidade</a></li>
+		</ul>
+	</nav>
+	<div class="container">
+		<div class="form-block">
+			<form method="POST" action="/newcity/">
+				<h1> Adicionar nova cidade </h2>
+				<label>Nome: </label>
+				<input type="text" name="Name">
+				<label>CountryCode: </label>
+				<select name="CountryCode">
+				{% for c in codes %}
+					<option value="{{c['Code']}}">{{c['LocalName']}}</option>
+				{% endfor %}
+				</select>
+				<label>District: </label>
+				<input type="text" name="District">
+				<label>Population: </label>
+				<input type="text" name="Population">
+				<input type="submit" value="Adicionar" class="btn-primary">
+			</form>
+		</div>
+	</div>
+
+</body>
+</html>

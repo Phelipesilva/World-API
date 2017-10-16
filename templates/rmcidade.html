@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 	<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-	<title>Cidades - World API</title>
+	<title>Adcionar Cidade - World API</title>
 </head>
 <body>
 	<nav>
@@ -16,24 +16,19 @@
 		</ul>
 	</nav>
 	<div class="container">
-		<table>
-			<tr>
-				<th> Nome </th>
-				<th> Estado </th>
-				<th> População </th>
-				<th> País </th>
-				<th> ID </th>
-			</tr>
-			{% for c in cidades %}
-				<tr>
-					<td> {{ c['Name'] }} </td>
-					<td> {{ c['District'] }} </td>
-					<td> {{ c['Population'] }} </td>
-					<td> {{ c['CountryCode'] }} </td>
-					<td> {{ c['ID'] }} </td>
-				</tr>
-			{% endfor %}
-		</table>
+		<div class="form-block">
+			<form method="POST" action="/delcity/">
+				<h1> Remover cidade </h2>
+				<label>ID: </label>
+				<select name="ID">
+					{% for c in cidades %}
+						<option value="{{c['ID']}}">[{{c['ID']}}]  {{c['Name']}}</option>
+					{% endfor %}
+				</select>
+				<input type="submit" value="Remover" class="btn-primary">
+			</form>
+		</div>
 	</div>
+
 </body>
 </html>

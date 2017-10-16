@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 	<link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-	<title>Cidades - World API</title>
+	<title>Adcionar Cidade - World API</title>
 </head>
 <body>
 	<nav>
@@ -16,24 +16,23 @@
 		</ul>
 	</nav>
 	<div class="container">
-		<table>
-			<tr>
-				<th> Nome </th>
-				<th> Estado </th>
-				<th> População </th>
-				<th> País </th>
-				<th> ID </th>
-			</tr>
-			{% for c in cidades %}
-				<tr>
-					<td> {{ c['Name'] }} </td>
-					<td> {{ c['District'] }} </td>
-					<td> {{ c['Population'] }} </td>
-					<td> {{ c['CountryCode'] }} </td>
-					<td> {{ c['ID'] }} </td>
-				</tr>
-			{% endfor %}
-		</table>
+		<div class="form-block">
+			<form method="POST" action="/upcity/">
+				<h1> Atualizar cidade </h2>
+				<label>ID: </label>
+				<input type="text" name="ID">
+				<label>Nome: </label>
+				<input type="text" name="Name">
+				<label>CountryCode: </label>
+				<input type="text" name="CountryCode">
+				<label>District: </label>
+				<input type="text" name="District">
+				<label>Population: </label>
+				<input type="text" name="Population">
+				<input type="submit" value="Atualizar" class="btn-primary">
+			</form>
+		</div>
 	</div>
+
 </body>
 </html>

@@ -1,14 +1,40 @@
 .container {
   width: 50%;
   display: block;
-  margin: 0 auto;
+  margin: 10px auto;
   text-align: center;
 }
 
-form{
-  display: inline-block;
-  margin: 0 auto;
+.form-block{ padding: 20px; }
+.form-block form{
+  display: grid;
+  text-align: left;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 3px;
+  box-shadow: 3px 3px 5px 5px rgba(60, 60, 100, .2);
 }
+
+.form-block h1 { text-align: center; }
+.form-block input, option{ margin: 3px 0; }
+.btn-primary{
+  background-color: #404090;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 9px;
+}
+
+nav{ background-color: #404090; }
+nav ul li{
+  list-style-type: none;
+  display: inline-block;
+  margin: 5px;
+}
+nav li{ padding: 5px; }
+nav a{ color: #fff; }
+
+form{ display: inline-block; margin: 0 auto; }
 
 tr,td,th{padding: 5px; }
 table{
@@ -17,12 +43,9 @@ table{
   text-align: left;
 }
 
-body{
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-color: rgba(90, 90, 190, .2)
-}
-input{padding: 5px;}
-label{margin: 5px;}
-option{padding: 5px;}
-*{font-family: helvetica;}
+h1{ font-size: 1.3em; }
+input{ padding: 8px; border-radius: 3px; border: solid 1px #808080; }
+label{ margin: 5px; font-size: .8em;}
+select{ padding: 8px; border-radius: 3px; border: solid 1px #808080; background-color: #fff;}
+*{ font-family: helvetica; color: #808080; margin: 0px; }
+a{ text-decoration: none; }
